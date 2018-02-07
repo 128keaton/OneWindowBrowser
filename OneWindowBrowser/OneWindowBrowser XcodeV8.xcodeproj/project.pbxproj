@@ -16,6 +16,9 @@
 		81F187E32029F8340066D7A0 /* OWUserAgentController.m in Sources */ = {isa = PBXBuildFile; fileRef = 81F187DD2029F8340066D7A0 /* OWUserAgentController.m */; };
 		81F187E42029F8340066D7A0 /* OWWindowHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 81F187DF2029F8340066D7A0 /* OWWindowHelper.m */; };
 		81F187EA202A16020066D7A0 /* OWBIcon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 81F187E9202A16020066D7A0 /* OWBIcon.icns */; };
+		8A86E178202B97460067F058 /* NSCurvedButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A86E177202B97460067F058 /* NSCurvedButton.m */; };
+		8A86E17B202BA62E0067F058 /* back-arrow-button.png in Resources */ = {isa = PBXBuildFile; fileRef = 8A86E17A202BA3570067F058 /* back-arrow-button.png */; };
+		8A86E17D202BA70C0067F058 /* forward-arrow-button.png in Resources */ = {isa = PBXBuildFile; fileRef = 8A86E17C202BA6E10067F058 /* forward-arrow-button.png */; };
 		8ADD1DE6202A7B000099F863 /* Preferences.nib in Resources */ = {isa = PBXBuildFile; fileRef = 8ADD1DE4202A7B000099F863 /* Preferences.nib */; };
 		8ADD1DE8202A7C380099F863 /* OWPreferencesController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8ADD1DE7202A7C380099F863 /* OWPreferencesController.m */; };
 		8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
@@ -45,6 +48,10 @@
 		81F187DE2029F8340066D7A0 /* OWWindowHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OWWindowHelper.h; sourceTree = "<group>"; };
 		81F187DF2029F8340066D7A0 /* OWWindowHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OWWindowHelper.m; sourceTree = "<group>"; };
 		81F187E9202A16020066D7A0 /* OWBIcon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = OWBIcon.icns; path = HiDPIResources/OWBIcon.icns; sourceTree = "<group>"; };
+		8A86E176202B97220067F058 /* NSCurvedButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NSCurvedButton.h; sourceTree = "<group>"; };
+		8A86E177202B97460067F058 /* NSCurvedButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NSCurvedButton.m; sourceTree = "<group>"; };
+		8A86E17A202BA3570067F058 /* back-arrow-button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "back-arrow-button.png"; sourceTree = "<group>"; };
+		8A86E17C202BA6E10067F058 /* forward-arrow-button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "forward-arrow-button.png"; sourceTree = "<group>"; };
 		8ADD1DE5202A7B000099F863 /* English */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = English; path = English.lproj/Preferences.nib; sourceTree = "<group>"; };
 		8ADD1DE7202A7C380099F863 /* OWPreferencesController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OWPreferencesController.m; sourceTree = "<group>"; };
 		8ADD1DE9202A7C560099F863 /* OWPreferencesController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OWPreferencesController.h; sourceTree = "<group>"; };
@@ -67,6 +74,7 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				8A86E175202B96EA0067F058 /* Subclasses */,
 				81F187D62029F8340066D7A0 /* OWAppDelegate.h */,
 				81F187D72029F8340066D7A0 /* OWAppDelegate.m */,
 				81F187D82029F8340066D7A0 /* OWBrowserController.h */,
@@ -133,6 +141,8 @@
 			isa = PBXGroup;
 			children = (
 				81F187E9202A16020066D7A0 /* OWBIcon.icns */,
+				8A86E17A202BA3570067F058 /* back-arrow-button.png */,
+				8A86E17C202BA6E10067F058 /* forward-arrow-button.png */,
 				81F187D42029F8280066D7A0 /* Credits.rtf */,
 				81F187D02029F81A0066D7A0 /* CustomUserAgent.nib */,
 				815DC2862025EE3A0004DB6E /* MainMenu.nib */,
@@ -150,6 +160,15 @@
 				1058C7A2FEA54F0111CA2CBB /* Other Frameworks */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8A86E175202B96EA0067F058 /* Subclasses */ = {
+			isa = PBXGroup;
+			children = (
+				8A86E176202B97220067F058 /* NSCurvedButton.h */,
+				8A86E177202B97460067F058 /* NSCurvedButton.m */,
+			);
+			name = Subclasses;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -203,10 +222,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */,
+				8A86E17D202BA70C0067F058 /* forward-arrow-button.png in Resources */,
 				81F187EA202A16020066D7A0 /* OWBIcon.icns in Resources */,
 				815DC2882025EE3A0004DB6E /* MainMenu.nib in Resources */,
 				8ADD1DE6202A7B000099F863 /* Preferences.nib in Resources */,
 				81F187D52029F8280066D7A0 /* Credits.rtf in Resources */,
+				8A86E17B202BA62E0067F058 /* back-arrow-button.png in Resources */,
 				81F187D32029F81A0066D7A0 /* CustomUserAgent.nib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -219,6 +240,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				81F187E12029F8340066D7A0 /* OWBrowserController.m in Sources */,
+				8A86E178202B97460067F058 /* NSCurvedButton.m in Sources */,
 				8D11072D0486CEB800E47090 /* main.m in Sources */,
 				81F187E32029F8340066D7A0 /* OWUserAgentController.m in Sources */,
 				81F187E42029F8340066D7A0 /* OWWindowHelper.m in Sources */,
