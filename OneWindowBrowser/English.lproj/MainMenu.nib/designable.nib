@@ -25,7 +25,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <textField verticalHuggingPriority="750" misplaced="YES" id="254">
-                        <rect key="frame" x="63" y="430" width="409" height="24"/>
+                        <rect key="frame" x="70" y="430" width="402" height="24"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" state="on" borderStyle="bezel" title="http://localhost" bezelStyle="round" id="344">
                             <font key="font" metaFont="system" size="16"/>
@@ -37,7 +37,7 @@
                         </connections>
                     </textField>
                     <button verticalHuggingPriority="750" misplaced="YES" imageHugsTitle="YES" id="256" customClass="NSCurvedButton">
-                        <rect key="frame" x="5" y="428" width="26" height="27"/>
+                        <rect key="frame" x="6" y="428" width="26" height="27"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <buttonCell key="cell" type="roundTextured" bezelStyle="texturedRounded" image="back-arrow-button" imagePosition="overlaps" alignment="center" borderStyle="border" imageScaling="proportionallyUpOrDown" inset="2" id="345">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -48,9 +48,9 @@
                         </connections>
                     </button>
                     <button verticalHuggingPriority="750" misplaced="YES" imageHugsTitle="YES" id="3tV-aa-ago" customClass="NSCurvedButton">
-                        <rect key="frame" x="33" y="428" width="26" height="27"/>
+                        <rect key="frame" x="36" y="428" width="26" height="27"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <buttonCell key="cell" type="roundTextured" bezelStyle="texturedRounded" image="forward-arrow-button" imagePosition="overlaps" alignment="center" borderStyle="border" imageScaling="proportionallyUpOrDown" inset="2" id="eJo-6Z-caO">
+                        <buttonCell key="cell" type="roundTextured" bezelStyle="texturedRounded" image="forward-arrow-button" imagePosition="only" alignment="center" borderStyle="border" imageScaling="proportionallyUpOrDown" inset="2" id="eJo-6Z-caO">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                             <font key="font" metaFont="system"/>
                         </buttonCell>
@@ -70,7 +70,7 @@
                             <outlet property="frameLoadDelegate" destination="249" id="268"/>
                         </connections>
                     </webView>
-                    <button verticalHuggingPriority="750" imageHugsTitle="YES" id="275">
+                    <button verticalHuggingPriority="750" imageHugsTitle="YES" id="275" customClass="NSCurvedButton">
                         <rect key="frame" x="480" y="429" width="50" height="25"/>
                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
                         <buttonCell key="cell" type="squareTextured" title="Stop" bezelStyle="texturedSquare" alignment="center" borderStyle="border" inset="2" id="347">
@@ -81,7 +81,7 @@
                             <action selector="stopLoading:" target="263" id="279"/>
                         </connections>
                     </button>
-                    <button verticalHuggingPriority="750" imageHugsTitle="YES" id="276">
+                    <button verticalHuggingPriority="750" imageHugsTitle="YES" id="276" customClass="NSCurvedButton">
                         <rect key="frame" x="531" y="429" width="60" height="25"/>
                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
                         <buttonCell key="cell" type="squareTextured" title="Reload" bezelStyle="texturedSquare" alignment="center" borderStyle="border" inset="2" id="348">

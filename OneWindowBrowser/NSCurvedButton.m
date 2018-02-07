@@ -33,11 +33,13 @@
     if ([self image] != nil){
         [self drawImage:[self image] rect:validRect];
     }
+    
 }
 // drawRect:
 
 - (NSRect)validRect:(NSRect)dirtyRect {
     dirtyRect.size.height = 24;
+    dirtyRect.origin.y = dirtyRect.origin.y + 1;
     return dirtyRect;
 }
 
@@ -70,8 +72,8 @@
             // Clamp radius to be no larger than half the rect's width or height.
             float clampedRadius = MIN(radius, 0.5 * MIN(dirtyRect.size.width, dirtyRect.size.height));
             
-            float maxY = NSMaxY([self bounds]);
-            float minY = NSMinY([self bounds]);
+            float maxY = NSMaxY(dirtyRect);
+            float minY = NSMinY(dirtyRect);
             NSPoint origin = NSMakePoint(dirtyRect.origin.x, dirtyRect.origin.y);
             
             NSPoint topLeft = NSMakePoint(NSMinX(dirtyRect), maxY);
