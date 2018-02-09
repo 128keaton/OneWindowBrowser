@@ -28,10 +28,10 @@
     [path fill];
     
     if (![[self title]  isEqual: @""]){
-        [self drawTitle:[self title]];
+        [self drawTitle:[self title] rect: validRect];
     }
     if ([self image] != nil){
-        [self drawImage:[self image] rect:validRect];
+        [self drawImage:[self image] rect: validRect];
     }
     
 }
@@ -43,19 +43,22 @@
     return dirtyRect;
 }
 
-- (void) drawTitle:(NSString *)title{
+- (void) drawTitle:(NSString *)title rect:(NSRect)dirtyRect{
+    NSMutableParagraphStyle *style = [[NSParagraphStyle defaultParagraphStyle] mutableCopy];
+    style.alignment = NSCenterTextAlignment;
     
     NSDictionary *attributesDict = [NSDictionary dictionaryWithObjectsAndKeys:
                                     [NSColor grayColor], NSForegroundColorAttributeName,
                                     [self font], NSFontAttributeName,
+                                    style, NSParagraphStyleAttributeName,
                                     nil];
     
-    NSRect rect;
-    rect.size = [title sizeWithAttributes:attributesDict];
-    rect.origin.x = roundf( NSMidX([self bounds]) - rect.size.width / 2 );
-    rect.origin.y = roundf( NSMidY([self bounds]) - rect.size.height / 4 );
+    NSRect titleRect;
+    titleRect.size = CGSizeMake(dirtyRect.size.width, [title sizeWithAttributes:attributesDict].height);
+    titleRect.origin.x = roundf( NSMidX(dirtyRect) - dirtyRect.size.width / 2);
+    titleRect.origin.y = roundf( NSMidY(dirtyRect) - dirtyRect.size.height / 4 );
     
-    [title drawInRect:rect withAttributes:nil];
+    [title drawInRect:titleRect withAttributes:attributesDict];
 }
 // drawTitle:
 
