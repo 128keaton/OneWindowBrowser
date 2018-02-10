@@ -7,99 +7,31 @@
 
 #import <Foundation/Foundation.h>
 #import "NSCurvedButton.h"
+#import "NSCurvedButtonCell.h"
 
 @implementation NSCurvedButton;
 
-@synthesize path, cornerRadius;
-
-- (void)drawRect:(NSRect)dirtyRect {
-    
-    if (![self cornerRadius]){
-        self.cornerRadius = 5.0f;
-    }
-    
-    NSRect validRect = [self validRect:dirtyRect];
-
-    self.path = [self generateBezierPath:validRect cornerRadius:[self cornerRadius]];
-    
-    // Sets fill color to the NSButton background color
-    [self setWantsLayer:YES];
-    [[NSColor whiteColor] setFill];
-    [path fill];
-    
-    if (![[self title]  isEqual: @""]){
-        [self drawTitle:[self title] rect: validRect];
-    }
-    if ([self image] != nil){
-        [self drawImage:[self image] rect: validRect];
-    }
-    
++ (Class)cellClass
+{
+    return [NSCurvedButtonCell class];
 }
-// drawRect:
+// cellClass
 
-- (NSRect)validRect:(NSRect)dirtyRect {
-    dirtyRect.size.height = 24;
-    dirtyRect.origin.y = dirtyRect.origin.y + 1;
-    return dirtyRect;
-}
-
-- (void) drawTitle:(NSString *)title rect:(NSRect)dirtyRect{
-    NSMutableParagraphStyle *style = [[NSParagraphStyle defaultParagraphStyle] mutableCopy];
-    style.alignment = NSCenterTextAlignment;
+- (id)initWithCoder:(NSCoder *)aDecoder
+{
+    if (![aDecoder isKindOfClass:[NSKeyedUnarchiver class]])
+        return [super initWithCoder:aDecoder];
     
-    NSDictionary *attributesDict = [NSDictionary dictionaryWithObjectsAndKeys:
-                                    [NSColor grayColor], NSForegroundColorAttributeName,
-                                    [self font], NSFontAttributeName,
-                                    style, NSParagraphStyleAttributeName,
-                                    nil];
+    NSKeyedUnarchiver *unarchiver = (NSKeyedUnarchiver *)aDecoder;
+    Class previousClass = [[self superclass] cellClass];
+    Class newClass = [[self class] cellClass];
     
-    NSRect titleRect;
-    titleRect.size = CGSizeMake(dirtyRect.size.width, [title sizeWithAttributes:attributesDict].height);
-    titleRect.origin.x = roundf( NSMidX(dirtyRect) - dirtyRect.size.width / 2);
-    titleRect.origin.y = roundf( NSMidY(dirtyRect) - dirtyRect.size.height / 4 );
+    [unarchiver setClass:newClass forClassName:NSStringFromClass(previousClass)];
+    self = [super initWithCoder:aDecoder];
+    [unarchiver setClass:previousClass forClassName:NSStringFromClass(previousClass)];
     
-    [title drawInRect:titleRect withAttributes:attributesDict];
+    return self;
 }
-// drawTitle:
-
-- (void) drawImage:(NSImage *)image rect:(NSRect) rect{
-    [image drawInRect:rect];
-}
-
-// drawTitle:
-
-- (NSBezierPath *)generateBezierPath:(NSRect)dirtyRect cornerRadius:(float)radius {
-    NSBezierPath *generatedPath = [NSBezierPath bezierPath];
-    if (!NSIsEmptyRect(dirtyRect)) {
-        if (radius > 0.0) {
-            // Clamp radius to be no larger than half the rect's width or height.
-            float clampedRadius = MIN(radius, 0.5 * MIN(dirtyRect.size.width, dirtyRect.size.height));
-            
-            float maxY = NSMaxY(dirtyRect);
-            float minY = NSMinY(dirtyRect);
-            NSPoint origin = NSMakePoint(dirtyRect.origin.x, dirtyRect.origin.y);
-            
-            NSPoint topLeft = NSMakePoint(NSMinX(dirtyRect), maxY);
-            NSPoint topRight = NSMakePoint(NSMaxX(dirtyRect), maxY);
-            NSPoint bottomRight = NSMakePoint(NSMaxX(dirtyRect), minY);
-            
-            [generatedPath moveToPoint:NSMakePoint(NSMidX(dirtyRect), maxY)];
-            
-            [generatedPath appendBezierPathWithArcFromPoint:topLeft     toPoint:origin radius:clampedRadius];
-            [generatedPath appendBezierPathWithArcFromPoint:origin toPoint:bottomRight radius:clampedRadius];
-            [generatedPath appendBezierPathWithArcFromPoint:bottomRight toPoint:topRight    radius:clampedRadius];
-            [generatedPath appendBezierPathWithArcFromPoint:topRight    toPoint:topLeft     radius:clampedRadius];
-            [generatedPath closePath];
-            return generatedPath;
-        } else {
-            // When radius == 0.0, this degenerates to the simple case of a plain rectangle.
-            [generatedPath appendBezierPathWithRect:dirtyRect];
-            return generatedPath;
-        }
-    }
-}
-
-
-
+// initWithCoder:
 
 @end

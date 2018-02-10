@@ -16,9 +16,12 @@
 		81F187E32029F8340066D7A0 /* OWUserAgentController.m in Sources */ = {isa = PBXBuildFile; fileRef = 81F187DD2029F8340066D7A0 /* OWUserAgentController.m */; };
 		81F187E42029F8340066D7A0 /* OWWindowHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 81F187DF2029F8340066D7A0 /* OWWindowHelper.m */; };
 		81F187EA202A16020066D7A0 /* OWBIcon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 81F187E9202A16020066D7A0 /* OWBIcon.icns */; };
+		8A48968D202EA4AA00A08D71 /* NSBezierPathAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A48968C202EA4AA00A08D71 /* NSBezierPathAdditions.m */; };
 		8A86E178202B97460067F058 /* NSCurvedButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A86E177202B97460067F058 /* NSCurvedButton.m */; };
 		8A86E17B202BA62E0067F058 /* back-arrow-button.png in Resources */ = {isa = PBXBuildFile; fileRef = 8A86E17A202BA3570067F058 /* back-arrow-button.png */; };
 		8A86E17D202BA70C0067F058 /* forward-arrow-button.png in Resources */ = {isa = PBXBuildFile; fileRef = 8A86E17C202BA6E10067F058 /* forward-arrow-button.png */; };
+		8A86E17F202D77DF0067F058 /* NSCurvedButtonCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A86E17E202D77DF0067F058 /* NSCurvedButtonCell.m */; };
+		8A86E189202D84570067F058 /* CTGradient.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A86E187202D84560067F058 /* CTGradient.m */; };
 		8ADD1DE6202A7B000099F863 /* Preferences.nib in Resources */ = {isa = PBXBuildFile; fileRef = 8ADD1DE4202A7B000099F863 /* Preferences.nib */; };
 		8ADD1DE8202A7C380099F863 /* OWPreferencesController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8ADD1DE7202A7C380099F863 /* OWPreferencesController.m */; };
 		8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
@@ -48,10 +51,16 @@
 		81F187DE2029F8340066D7A0 /* OWWindowHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OWWindowHelper.h; sourceTree = "<group>"; };
 		81F187DF2029F8340066D7A0 /* OWWindowHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OWWindowHelper.m; sourceTree = "<group>"; };
 		81F187E9202A16020066D7A0 /* OWBIcon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = OWBIcon.icns; path = HiDPIResources/OWBIcon.icns; sourceTree = "<group>"; };
+		8A48968C202EA4AA00A08D71 /* NSBezierPathAdditions.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NSBezierPathAdditions.m; sourceTree = "<group>"; };
+		8A48968E202EA4B900A08D71 /* NSBezierPathAdditions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NSBezierPathAdditions.h; sourceTree = "<group>"; };
 		8A86E176202B97220067F058 /* NSCurvedButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NSCurvedButton.h; sourceTree = "<group>"; };
 		8A86E177202B97460067F058 /* NSCurvedButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NSCurvedButton.m; sourceTree = "<group>"; };
 		8A86E17A202BA3570067F058 /* back-arrow-button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "back-arrow-button.png"; sourceTree = "<group>"; };
 		8A86E17C202BA6E10067F058 /* forward-arrow-button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "forward-arrow-button.png"; sourceTree = "<group>"; };
+		8A86E17E202D77DF0067F058 /* NSCurvedButtonCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NSCurvedButtonCell.m; sourceTree = "<group>"; };
+		8A86E180202D77F40067F058 /* NSCurvedButtonCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NSCurvedButtonCell.h; sourceTree = "<group>"; };
+		8A86E187202D84560067F058 /* CTGradient.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CTGradient.m; sourceTree = "<group>"; };
+		8A86E188202D84570067F058 /* CTGradient.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CTGradient.h; sourceTree = "<group>"; };
 		8ADD1DE5202A7B000099F863 /* English */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = English; path = English.lproj/Preferences.nib; sourceTree = "<group>"; };
 		8ADD1DE7202A7C380099F863 /* OWPreferencesController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OWPreferencesController.m; sourceTree = "<group>"; };
 		8ADD1DE9202A7C560099F863 /* OWPreferencesController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OWPreferencesController.h; sourceTree = "<group>"; };
@@ -167,6 +176,12 @@
 			children = (
 				8A86E176202B97220067F058 /* NSCurvedButton.h */,
 				8A86E177202B97460067F058 /* NSCurvedButton.m */,
+				8A86E17E202D77DF0067F058 /* NSCurvedButtonCell.m */,
+				8A86E180202D77F40067F058 /* NSCurvedButtonCell.h */,
+				8A86E188202D84570067F058 /* CTGradient.h */,
+				8A86E187202D84560067F058 /* CTGradient.m */,
+				8A48968C202EA4AA00A08D71 /* NSBezierPathAdditions.m */,
+				8A48968E202EA4B900A08D71 /* NSBezierPathAdditions.h */,
 			);
 			name = Subclasses;
 			sourceTree = "<group>";
@@ -242,9 +257,12 @@
 				81F187E12029F8340066D7A0 /* OWBrowserController.m in Sources */,
 				8A86E178202B97460067F058 /* NSCurvedButton.m in Sources */,
 				8D11072D0486CEB800E47090 /* main.m in Sources */,
+				8A86E189202D84570067F058 /* CTGradient.m in Sources */,
 				81F187E32029F8340066D7A0 /* OWUserAgentController.m in Sources */,
 				81F187E42029F8340066D7A0 /* OWWindowHelper.m in Sources */,
+				8A86E17F202D77DF0067F058 /* NSCurvedButtonCell.m in Sources */,
 				81F187E02029F8340066D7A0 /* OWAppDelegate.m in Sources */,
+				8A48968D202EA4AA00A08D71 /* NSBezierPathAdditions.m in Sources */,
 				8ADD1DE8202A7C380099F863 /* OWPreferencesController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
